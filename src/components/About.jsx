@@ -31,17 +31,24 @@ const StatCard = ({ value, label, icon: Icon, darkMode }) => (
 const educationData = [
     {
         degree: 'B.Tech in Computer Science',
-        institution: 'XYZ Institute of Technology',
-        year: '2020 – 2024',
-        grade: 'CGPA: 8.7 / 10',
+        institution: 'Lovely Professional university',
+        year: '2023 - 2027',
+        grade: 'CGPA: 7.11 / 10',
         icon: '🎓',
     },
     {
         degree: 'Higher Secondary (XII)',
-        institution: 'ABC Senior Secondary School',
-        year: '2019 – 2020',
-        grade: 'Percentage: 92%',
+        institution: 'Delhi Modal Public School',
+        year: '2020 - 2022',
+        grade: 'Percentage: 68%',
         icon: '📚',
+    },
+    {
+        degree: 'Secondary School (X)',
+        institution: 'Patna central School',
+        year: '2019 - 2020',
+        grade: 'Percentage: 80%',
+        icon: '📖',
     },
 ];
 
@@ -115,8 +122,8 @@ const About = ({ darkMode }) => {
                             variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
                             className="grid grid-cols-1 sm:grid-cols-3 gap-4"
                         >
-                            <StatCard value="10+" label="Projects" icon={FiUser} darkMode={darkMode} />
-                            <StatCard value="2+" label="Years Exp." icon={FiBook} darkMode={darkMode} />
+                            <StatCard value="5+" label="Projects" icon={FiUser} darkMode={darkMode} />
+                            <StatCard value="Fresher" label="Experience" icon={FiBook} darkMode={darkMode} />
                             <StatCard value="5+" label="Certs" icon={FiAward} darkMode={darkMode} />
                         </motion.div>
                     </motion.div>

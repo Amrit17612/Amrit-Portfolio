@@ -16,6 +16,7 @@ import javaCertImage from '../assets/certificate/java_programming_cert.png';
 import oopCertImage from '../assets/certificate/oop_dsa_cert.png';
 import dsaCertImage from '../assets/certificate/dsa_algo_cert.png';
 import nodeCertImage from '../assets/certificate/node_basic_cert.png';
+import pythonCertImage from '../assets/certificate/python_basic_cert.png';
 
 // Import all PDFs from the certificate directory
 const certModules = import.meta.glob('../assets/certificate/*.pdf', { eager: true, query: '?url', import: 'default' });
@@ -52,7 +53,7 @@ const categories = [
         glow: "rgba(16, 185, 129, 0.3)",
         subButtons: [
             { label: "Java", keyword: "java", image: javaCertImage },
-            { label: "Python", keyword: "python" },
+            { label: "Python", keyword: "python", image: pythonCertImage },
             { label: "C", keyword: "neocolab c" },
             { label: "C++", keyword: "cpp" },
             { label: "DSA", keyword: "dsa", image: dsaCertImage }

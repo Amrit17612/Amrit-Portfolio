@@ -6,16 +6,16 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi';
 const projects = [
     {
         id: 1,
-        title: 'Job Portal System',
+        title: 'Training Management System',
         description:
-            'A full-featured job portal where employers can post jobs and candidates can apply. Includes authentication, role-based access control, advanced filtering, and real-time notifications.',
-        image: '💼',
+            'A comprehensive platform to streamline organizational training. Features hierarchical course management, interactive progress tracking, automated assessments, and dynamic certification generation.',
+        image: '🎓',
         tags: ['React', 'Node.js', 'MongoDB', 'Express', 'JWT'],
         category: 'Full Stack',
-        github: 'https://github.com',
+        github: 'https://github.com/Amrit17612/SkillBridge',
         live: 'https://example.com',
         color: '#6366f1',
-        highlights: ['Multi-role auth', 'Real-time notifications', 'Advanced search'],
+        highlights: ['Course Management', 'Progress Analytics', 'Cert Generation'],
     },
     {
         id: 2,
@@ -32,55 +32,16 @@ const projects = [
     },
     {
         id: 3,
-        title: 'Ticket Booking System',
+        title: 'Event Management System',
         description:
-            'A queue-based ticket booking system with real-time seat availability, payment integration, and booking confirmation via email. Built with scalable microservices architecture.',
-        image: '🎟️',
+            'A platform for planning and managing large-scale events. Features real-time attendee registration, event scheduling, automated ticketing, and seamless check-in with QR code scanning.',
+        image: '📅',
         tags: ['React', 'Spring Boot', 'MySQL', 'AWS', 'Stripe'],
         category: 'Full Stack',
         github: 'https://github.com',
         live: 'https://example.com',
         color: '#ec4899',
-        highlights: ['Real-time seats', 'Payment gateway', 'Email confirmation'],
-    },
-    {
-        id: 4,
-        title: 'E-Commerce Dashboard',
-        description:
-            'A comprehensive admin dashboard for managing products, orders, and analytics. Features interactive charts, dark/light mode, and responsive design.',
-        image: '📊',
-        tags: ['React', 'Node.js', 'MongoDB', 'Recharts', 'Tailwind'],
-        category: 'Frontend',
-        github: 'https://github.com',
-        live: 'https://example.com',
-        color: '#06b6d4',
-        highlights: ['Analytics charts', 'Order management', 'Dark mode'],
-    },
-    {
-        id: 5,
-        title: 'Chat Application',
-        description:
-            'A real-time chat application with private messaging, group channels, file sharing, and online presence indicators powered by WebSockets.',
-        image: '💬',
-        tags: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Redis'],
-        category: 'Full Stack',
-        github: 'https://github.com',
-        live: 'https://example.com',
-        color: '#10b981',
-        highlights: ['WebSocket real-time', 'File sharing', 'Group channels'],
-    },
-    {
-        id: 6,
-        title: 'Weather Analytics App',
-        description:
-            'A weather analytics web app using OpenWeatherMap API with 7-day forecasts, interactive maps, and historical data visualization.',
-        image: '⛅',
-        tags: ['React', 'REST API', 'Chart.js', 'Leaflet.js'],
-        category: 'Frontend',
-        github: 'https://github.com',
-        live: 'https://example.com',
-        color: '#f59e0b',
-        highlights: ['7-day forecast', 'Interactive maps', 'Historical data'],
+        highlights: ['Real-time Reg', 'QR Check-in', 'Auto Ticketing'],
     },
 ];
 

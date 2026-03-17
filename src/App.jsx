@@ -6,7 +6,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Certification from './components/Certification';
-import Experience from './components/Experience';
+import Achievement from './components/Achievement';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
@@ -54,7 +54,7 @@ function App() {
             <Skills darkMode={darkMode} />
             <Projects darkMode={darkMode} />
             <Certification darkMode={darkMode} />
-            <Experience darkMode={darkMode} />
+            <Achievement darkMode={darkMode} />
             <Contact darkMode={darkMode} />
           </main>
           <Footer darkMode={darkMode} />

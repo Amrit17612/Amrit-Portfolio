@@ -275,8 +275,8 @@ const Hero = ({ darkMode }) => {
                             className={`absolute -bottom-4 -left-2 sm:-left-8 px-4 py-2 rounded-2xl shadow-xl z-20 ${darkMode ? 'glass' : 'glass-light'}`}
                         >
                             <div className="text-center">
-                                <div className="text-2xl font-black gradient-text">2+</div>
-                                <div className={`text-xs ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>Years Exp.</div>
+                                <div className="text-2xl font-black gradient-text">Fresher</div>
+                                <div className={`text-xs ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>Experience</div>
                             </div>
                         </motion.div>
 
@@ -287,7 +287,7 @@ const Hero = ({ darkMode }) => {
                             className={`absolute -top-4 -right-2 sm:-right-8 px-4 py-2 rounded-2xl shadow-xl z-20 ${darkMode ? 'glass' : 'glass-light'}`}
                         >
                             <div className="text-center">
-                                <div className="text-2xl font-black gradient-text">10+</div>
+                                <div className="text-2xl font-black gradient-text">5+</div>
                                 <div className={`text-xs ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>Projects</div>
                             </div>
                         </motion.div>
