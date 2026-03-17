@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FiDownload, FiAward, FiBook, FiUser } from 'react-icons/fi';
 import profilePic from '../assets/profile.png';
+import amritResume from '../assets/Amrit_CV.pdf';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -164,18 +165,33 @@ const About = ({ darkMode }) => {
                             ))}
                         </div>
 
-                        {/* Download resume */}
-                        <motion.a
-                            href="/resume.pdf"
-                            download
-                            whileHover={{ scale: 1.04 }}
-                            whileTap={{ scale: 0.97 }}
-                            className="btn-primary inline-flex"
-                            id="download-resume-btn"
-                        >
-                            <FiDownload size={18} />
-                            Download Resume
-                        </motion.a>
+                        {/* Resume Actions */}
+                        <div className="flex flex-wrap gap-4">
+                            <motion.a
+                                href={amritResume}
+                                download="Amrit_Raj_CV.pdf"
+                                whileHover={{ scale: 1.04 }}
+                                whileTap={{ scale: 0.97 }}
+                                className="btn-primary inline-flex"
+                                id="download-resume-btn"
+                            >
+                                <FiDownload size={18} />
+                                Download Resume
+                            </motion.a>
+                            
+                            <motion.a
+                                href={amritResume}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.04 }}
+                                whileTap={{ scale: 0.97 }}
+                                className={`btn-outline inline-flex ${darkMode ? 'glass' : 'glass-light'}`}
+                                id="view-resume-btn"
+                            >
+                                <FiBook size={18} />
+                                View Resume
+                            </motion.a>
+                        </div>
                     </motion.div>
                 </div>
             </div>
