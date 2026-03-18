@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import TrainingImg from '../assets/training-management.png';
+import CpuImg from '../assets/cpu-scheduling.png';
+import EventImg from '../assets/event-management.png';
+
+
+
 
 const projects = [
     {
@@ -9,12 +15,13 @@ const projects = [
         title: 'Training Management System',
         description:
             'A comprehensive platform to streamline organizational training. Features hierarchical course management, interactive progress tracking, automated assessments, and dynamic certification generation.',
-        image: '🎓',
+        image: TrainingImg,
         tags: ['React', 'Node.js', 'MongoDB', 'Express', 'JWT'],
         category: 'Full Stack',
         github: 'https://github.com/Amrit17612/SkillBridge',
         live: 'https://example.com',
-        color: '#6366f1',
+        color: '#f97316',
+
         highlights: ['Course Management', 'Progress Analytics', 'Cert Generation'],
     },
     {
@@ -22,12 +29,14 @@ const projects = [
         title: 'CPU Scheduler Simulator',
         description:
             'An intelligent CPU scheduling simulator that visualizes FCFS, SJF, Round Robin, and Priority algorithms with Gantt charts and performance metrics.',
-        image: '🖥️',
+        image: CpuImg,
+
         tags: ['Java', 'Spring Boot', 'React', 'Chart.js'],
         category: 'Simulation',
         github: 'https://github.com',
         live: 'https://example.com',
-        color: '#8b5cf6',
+        color: '#06b6d4',
+
         highlights: ['4 algorithms', 'Gantt chart viz', 'Performance metrics'],
     },
     {
@@ -35,12 +44,14 @@ const projects = [
         title: 'Event Management System',
         description:
             'A platform for planning and managing large-scale events. Features real-time attendee registration, event scheduling, automated ticketing, and seamless check-in with QR code scanning.',
-        image: '📅',
+        image: EventImg,
+
         tags: ['React', 'Spring Boot', 'MySQL', 'AWS', 'Stripe'],
         category: 'Full Stack',
         github: 'https://github.com',
         live: 'https://example.com',
-        color: '#ec4899',
+        color: '#8b5cf6',
+
         highlights: ['Real-time Reg', 'QR Check-in', 'Auto Ticketing'],
     },
 ];
@@ -76,7 +87,15 @@ const ProjectCard = ({ project, darkMode }) => {
                         backgroundSize: '30px 30px',
                     }}
                 />
-                <span className="text-7xl z-10 relative">{project.image}</span>
+                {typeof project.image === 'string' && project.image.length <= 4 ? (
+                    <span className="text-7xl z-10 relative">{project.image}</span>
+                ) : (
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover z-10 transition-transform duration-500 group-hover:scale-110"
+                    />
+                )}
 
                 {/* Overlay with links on hover */}
                 <AnimatePresence>
