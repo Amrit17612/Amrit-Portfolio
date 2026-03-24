@@ -1,51 +1,40 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { FiCode, FiServer, FiDatabase, FiCloud, FiLayout, FiMaximize, FiCheckCircle } from 'react-icons/fi';
 
 const skillCategories = [
     {
-        title: 'Frontend',
-        icon: '🎨',
+        title: 'Frontend Development',
+        icon: <FiLayout />,
         color: '#6366f1',
-        skills: [
-            { name: 'HTML5 & CSS3', level: 95 },
-            { name: 'JavaScript (ES6+)', level: 90 },
-            { name: 'React.js', level: 88 },
-            { name: 'Tailwind CSS', level: 85 },
-        ],
+        description: 'Building immersive, responsive, and high-performance user interfaces with modern frameworks.',
+        skills: ['HTML5 & CSS3', 'JavaScript (ES6+)', 'React.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript'],
+        span: 'lg:col-span-2'
     },
     {
-        title: 'Backend',
-        icon: '⚙️',
+        title: 'Backend Systems',
+        icon: <FiServer />,
         color: '#8b5cf6',
-        skills: [
-            { name: 'Node.js & Express', level: 85 },
-            { name: 'Java', level: 82 },
-            { name: 'Spring Boot', level: 78 },
-            { name: 'REST APIs', level: 90 },
-        ],
+        description: 'Architecting robust and scalable server-side solutions and business logic.',
+        skills: ['Node.js & Express', 'Java', 'Spring Boot', 'RESTful APIs', 'Microservices', 'WebSocket'],
+        span: 'lg:col-span-1'
     },
     {
-        title: 'Database',
-        icon: '🗄️',
+        title: 'Data Management',
+        icon: <FiDatabase />,
         color: '#ec4899',
-        skills: [
-            { name: 'MySQL', level: 85 },
-            { name: 'MongoDB', level: 80 },
-            { name: 'Redis', level: 65 },
-            { name: 'PostgreSQL', level: 70 },
-        ],
+        description: 'Designing efficient database schemas and managing complex data workflows.',
+        skills: ['MySQL', 'MongoDB', 'Redis', 'PostgreSQL', 'Mongoose', 'SQL Optimization'],
+        span: 'lg:col-span-1'
     },
     {
-        title: 'DevOps & Tools',
-        icon: '🛠️',
+        title: 'Infrastructure & Tools',
+        icon: <FiCloud />,
         color: '#06b6d4',
-        skills: [
-            { name: 'Git & GitHub', level: 92 },
-            { name: 'AWS (EC2, S3)', level: 70 },
-            { name: 'Docker', level: 68 },
-            { name: 'Linux / Bash', level: 75 },
-        ],
+        description: 'Streamlining development processes and managing cloud-native deployments.',
+        skills: ['Git & GitHub', 'AWS (EC2, S3)', 'Docker', 'Linux / Bash', 'CI/CD', 'Netlify / Vercel'],
+        span: 'lg:col-span-2'
     },
 ];
 
@@ -62,22 +51,24 @@ const techIcons = [
     { name: 'TypeScript', emoji: '📘' },
 ];
 
-const SkillBar = ({ name, level, color, inView }) => (
-    <div className="mb-4">
-        <div className="flex justify-between items-center mb-1.5">
-            <span className="text-sm font-medium text-slate-300">{name}</span>
-            <span className="text-xs font-semibold" style={{ color }}>{level}%</span>
-        </div>
-        <div className="progress-bar">
-            <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: inView ? `${level}%` : 0 }}
-                transition={{ duration: 1.2, delay: 0.3, ease: 'easeOut' }}
-                className="progress-fill"
-                style={{ background: `linear-gradient(90deg, ${color}aa, ${color})` }}
-            />
-        </div>
-    </div>
+const SkillTag = ({ name, color, darkMode }) => (
+    <motion.div
+        whileHover={{ 
+            scale: 1.05, 
+            y: -2,
+            backgroundColor: `${color}20`,
+            borderColor: color
+        }}
+        className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all cursor-default"
+        style={{ 
+            backgroundColor: `${color}08`, 
+            borderColor: `${color}15`,
+            color: darkMode ? '#e2e8f0' : '#475569' 
+        }}
+    >
+        <FiCheckCircle size={10} style={{ color }} />
+        {name}
+    </motion.div>
 );
 
 const Skills = ({ darkMode }) => {
@@ -133,31 +124,54 @@ const Skills = ({ darkMode }) => {
                     ))}
                 </motion.div>
 
-                {/* Skill category cards */}
-                <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+                {/* Skill category Bento grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {skillCategories.map((cat, i) => (
                         <motion.div
                             key={cat.title}
                             initial={{ opacity: 0, y: 40 }}
                             animate={inView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.5, delay: 0.15 * i }}
-                            className={`p-6 rounded-2xl card-hover ${darkMode ? 'glass' : 'bg-white shadow-lg border border-slate-100'}`}
+                            className={`p-8 rounded-3xl relative overflow-hidden group border transition-all duration-500 ${cat.span} ${
+                                darkMode 
+                                ? 'bg-slate-900/40 border-slate-800/50 hover:bg-slate-900/60' 
+                                : 'bg-white border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-2xl'
+                            }`}
                         >
+                            {/* Hover background glow */}
+                            <div 
+                                className="absolute -right-16 -top-16 w-32 h-32 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-3xl pointer-events-none"
+                                style={{ backgroundColor: cat.color }}
+                            />
+
                             {/* Card header */}
-                            <div className="flex items-center gap-3 mb-6">
+                            <div className="flex items-start justify-between mb-6">
                                 <div
-                                    className="w-10 h-10 rounded-xl flex items-center justify-center text-xl"
-                                    style={{ background: `${cat.color}22`, border: `1px solid ${cat.color}44` }}
+                                    className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110"
+                                    style={{ background: `${cat.color}15`, color: cat.color, border: `1px solid ${cat.color}33` }}
                                 >
                                     {cat.icon}
                                 </div>
-                                <h3 className={`font-bold text-lg ${darkMode ? 'text-white' : 'text-slate-900'}`}>{cat.title}</h3>
+                                <div className="text-[10px] uppercase tracking-widest font-bold opacity-30">Category {i + 1}</div>
                             </div>
 
-                            {/* Skill bars */}
-                            {cat.skills.map((skill) => (
-                                <SkillBar key={skill.name} {...skill} color={cat.color} inView={inView} />
-                            ))}
+                            <h3 className={`font-bold text-xl mb-2 ${darkMode ? 'text-white' : 'text-slate-900'}`}>{cat.title}</h3>
+                            <p className={`text-sm mb-8 leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
+                                {cat.description}
+                            </p>
+
+                            {/* Skill tags */}
+                            <div className="flex flex-wrap gap-2.5">
+                                {cat.skills.map((skillName) => (
+                                    <SkillTag key={skillName} name={skillName} color={cat.color} darkMode={darkMode} />
+                                ))}
+                            </div>
+
+                            {/* Decorative line */}
+                            <div 
+                                className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-500"
+                                style={{ backgroundColor: cat.color }}
+                            />
                         </motion.div>
                     ))}
                 </div>

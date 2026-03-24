@@ -4,7 +4,7 @@ import { FiGithub, FiLinkedin, FiMail, FiTwitter, FiHeart } from 'react-icons/fi
 
 const socials = [
     { icon: FiGithub, href: 'https://github.com/Amrit17612', label: 'GitHub' },
-    { icon: FiLinkedin, href: 'https://www.linkedin.com/in/amrit17612', label: 'LinkedIn' },
+    { icon: FiLinkedin, href: 'https://www.linkedin.com/in/er-amrit/', label: 'LinkedIn' },
     { icon: FiMail, href: 'mailto:amrit17612@gmail.com', label: 'Email' },
     { icon: FiTwitter, href: 'https://twitter.com', label: 'Twitter' },
 ];

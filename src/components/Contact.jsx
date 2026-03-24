@@ -21,8 +21,8 @@ const contactInfo = [
     {
         icon: FiLinkedin,
         label: 'LinkedIn',
-        value: 'linkedin.com/in/amrit17612',
-        href: 'https://www.linkedin.com/in/amrit17612',
+        value: 'linkedin.com/in/er-amrit/',
+        href: 'https://www.linkedin.com/in/er-amrit/',
         color: '#0077b5',
     },
     {

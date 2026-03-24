@@ -226,7 +226,7 @@ const Hero = ({ darkMode }) => {
                     >
                         <span className={`text-sm ${darkMode ? 'text-slate-500' : 'text-slate-400'}`}>Follow me:</span>
                         <SocialLink href="https://github.com/Amrit17612" icon={FiGithub} label="GitHub" darkMode={darkMode} />
-                        <SocialLink href="https://www.linkedin.com/in/amrit17612" icon={FiLinkedin} label="LinkedIn" darkMode={darkMode} />
+                        <SocialLink href="https://www.linkedin.com/in/er-amrit/" icon={FiLinkedin} label="LinkedIn" darkMode={darkMode} />
                         <SocialLink href="mailto:amrit17612@gmail.com" icon={FiMail} label="Email" darkMode={darkMode} />
                     </motion.div>
                 </div>
